@@ -25,8 +25,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.2.0",
-    "iron-collapse": "PolymerElements/iron-collapse#~1.0.5",
-    "iron-selector": "PolymerElements/iron-selector#~1.0.8"
+    "iron-collapse": "PolymerElements/iron-collapse#^1.2.1",
+    "iron-selector": "PolymerElements/iron-selector#^1.5.2"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
