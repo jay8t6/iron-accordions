@@ -13,9 +13,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>iron-accordions Demo</title>
-    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="../iron-accordions.html">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
     <link rel="import" href="../../paper-button/paper-button.html">
+
+    <link rel="import" href="../iron-accordion.html">
+
     <style>
       iron-accordion img {
         display: block;
@@ -33,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <iron-accordions id="ali">
       <iron-accordion opened>
-        <h2 header>Long Paragraph Ahead</h2> <!-- This thing gonna be clicked -->
+        <h2 slot="header">Long Paragraph Ahead</h2> <!-- This thing gonna be clicked -->
         <!-- This thing below is hidden -->
         <p>Of course you can! Everything in this room is eatable, even I'm eatable! But that is called 'cannibalism', my dear children, and is in fact frowned upon in most societies.</p>
         <p>Have you not met Will Turner? He's noble, heroic, terrific soprano! Worth at least four. Maybe 3 and a half. And did I happen to mention? He's in love with a girl. Due to be married. Betrothed. Dividing him from her and her from him would only be half as cruel as actually allowing tham to be joined together in holy matrimony, eh?</p>
@@ -42,7 +45,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <p>Ladies! Will you please shut it? Listen to me. Yes, I lied to you. No, I don't love you. Of course it makes you look fat. I've never been to Brussels. It is pronounced 'egregious'. By the way, no, I've never met Pizzaro but I love his pies. And all of this pales to utter insignificance in light of the fact that my ship is once again gone. Savvy?</p>
       </iron-accordion>
       <iron-accordion>
-        <img header src="http://fpoimg.com/300x250" /> <!-- This thing gonna be clicked -->
+        <img slot="header" src="http://fpoimg.com/300x250" /> <!-- This thing gonna be clicked -->
         <!-- This thing below is hidden -->
         <img src="http://fpoimg.com/300x250" />
         <img src="http://fpoimg.com/250x250" />
@@ -50,25 +53,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <img src="http://fpoimg.com/300x150" />
       </iron-accordion>
       <iron-accordion>
-        <img header src="http://fpoimg.com/100x100" style="margin-right:1em;" /> <!-- This thing gonna be clicked -->
-        <h2 header>Compound</h2> <!-- This thing gonna be clicked -->
-        <p header>as header</p> <!-- This thing gonna be clicked -->
+        <img slot="header" src="http://fpoimg.com/100x100" style="margin-right:1em;" /> <!-- This thing gonna be clicked -->
+        <h2 slot="header">Compound</h2> <!-- This thing gonna be clicked -->
+        <p slot="header">as header</p> <!-- This thing gonna be clicked -->
         <!-- This thing below is hidden -->
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
         <iron-accordions id="nested">
           <iron-accordion>
-            <h3 header>Memento</h3>
+            <h3 slot="header">Memento</h3>
             <paper-button raised>Test</paper-button>
             <p>Some detail</p>
           </iron-accordion>
           <iron-accordion>
-            <h3 header>Inception</h3>
+            <h3 slot="header">Inception</h3>
             <p>Some detail</p>
           </iron-accordion>
           <iron-accordion>
-            <h3 header>Interstellar</h3>
+            <h3 slot="header">Interstellar</h3>
             <p>Some detail</p>
           </iron-accordion>
         </iron-accordions>
