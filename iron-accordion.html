@@ -43,30 +43,26 @@ Example multiple:
         display: block;
         box-sizing: border-box;
       }
-
       #header {
         cursor: pointer;
         overflow: hidden;
       }
-
       #content {
         overflow: hidden;
       }
-
     </style>
 
-    <div id="header">
-      <content select="[header]"></content>
+    <div id="header" on-click="_onHeaderClick">
+      <slot name="header"></slot>
     </div>
     <iron-collapse id="content" opened="{{opened}}">
-      <content></content>
+      <slot></slot>
     </iron-collapse>
   </template>
 
   <script>
     Polymer({
       is: 'iron-accordion',
-
       properties: {
         /**
          * Set opened to true to show the collapse element and to false to hide it.
@@ -81,43 +77,12 @@ Example multiple:
         }
       },
 
-      listeners: {
-        'header.tap': '_onHeaderTap'
-      },
-
-      // Element Lifecycle
-
-      ready: function() {
-        // `ready` is called after all elements have been configured, but
-        // propagates bottom-up. This element's children are ready, but parents
-        // are not.
-        //
-        // This is the point where you should make modifications to the DOM (when
-        // necessary), or kick off any processes the element wants to perform.
-      },
-
-      attached: function() {
-        // `attached` fires once the element and its parents have been inserted
-        // into a document.
-        //
-        // This is a good place to perform any work related to your element's
-        // visual state or active behavior (measuring sizes, beginning animations,
-        // loading resources, etc).
-      },
-
-      detached: function() {
-        // The analog to `attached`, `detached` fires when the element has been
-        // removed from a document.
-        //
-        // Use this to clean up anything you did in `attached`.
-      },
-
       // Element Behavior
 
       /**
        * Listener to #header tap. And fire custom events.
        */
-      _onHeaderTap: function(e) {
+      _onHeaderClick: function(e) {
         this.toggle();
         this.fire('iron-accordion-header-tap');
       },
